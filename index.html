@@ -3,41 +3,261 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width-device-width, initial-scale">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>Project.01-HTML</title>
 
+    <!--incase needed-->
+    <!--<link rel="stylesheet" href="css/index.css">-->
+
     <style>
-    .header {
-    padding: 60px;
+
+    html{
+      font size: 10px;
+      scroll-behavior: smooth;
+      overflow-x: smooth;
+      scroll-padding-top: 4rem;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .container{
+      max-width: 1300px;
+      padding: 0px 100px;
+      z-index: 10;
+      background-image: linear-gradient(rgba(0,0,0,0.3),transparent),url();
+      background-size: cover;
+      background-position: center;
+      padding: 0 8%;
+      position: relative;
+    }
+
+    /* .header {
+    padding: 80px;
     text-align: center;
     background: #202020;
     color: white;
     font-size: 30px;
+    top:0; left:0; right:0;
+    z-index: 1000;
+    border bottom: .1rem solid #fff;
+    } */
+
+    .navbar{
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem center;
+      border-bottom: 0cm;
+      position: fixed;
+      top:0; left:0; right:0;
+      z-index: 1000;
     }
 
-    .center {
-      text-align: center;
+    nav{
+      background-color: transparent;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 0px 0px 50px 50px;
+      backdrop-filter: blur(15px);
+      display: flex;
+      width: 100%;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 1rem 2.1rem;
+      box-shadow: 0 25px 20px -20px rgba(0,0,0,0.4);
+    }
+    nav ul{
+      display:flex;
+      gap: 18rem;
+      list-style:none;
+      justify-content: center;
+    }
+    .navbar .intro a{
+      font-size: 600;
+      color:#ffffff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar .tema a{
+      font-size: 15px;
+      font-weight: bolder;
+      color:#ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      top: 9px;
+    }
+    .navbar .links{
+      display: flex;
+      gap: 3rem;
+      padding: 10px
     }
 
-    .content {padding:45px;}
+    nav ul li{
+      display: inline;
+    }
+    nav ul li a{
+      color:#ffffff;
+      text-decoration: none;
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: 600;
+      position: relative;
+    }
+    nav ul li a::after{
+      content: '';
+      width: 0;
+      height: 3px;
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #dbd1d1;
+      transition: width 0.3s;
+    }
+    nav ul li a:hover{
+      color: #dba514;
+      transition: .3s;
+    }
+    nav ul li a:hover::after{
+      width: 50%;
+    }
+
+    section{
+      padding: 3rem 9%;
+    }
+    
+    .Home{
+      background:rgba(0,0,0,0.2) url(images/home.png);
+      background-blend-mode: darken;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      text-align:center;
+    }
+    .Home .content{
+      padding-top: 5rem;
+      width:70rem;
+      margin: 0 auto;
+    }
+    .Home .content h3{
+      font-size: 190px;
+      color: aquamarine;
+      color: transparent;
+      -webkit-text-stroke: 1px #dbd1d1;
+      background: url(images/back.png);
+      -webkit-background-clip: text;
+      background-position: 0 0;
+      animation: back 20s linear infinite;
+    }
+    @keyframes back{
+      100% {
+        background-position: 2000px 0;
+      }
+    }
+    .Home .content p{
+      font-size: 40px;
+      color: aliceblue;
+      padding: 1rem 0;
+    }
+
+    .Gallery{
+      background:rgba(0,0,0,0.9) url(images/gallery.png);
+      background-blend-mode: darken;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      text-align:center;
+    }
+    .Gallery .content p{
+      font-size: 25px;
+      color: aliceblue;
+      padding: 1rem 0;
+    }
+    
+
+    body{
+      background-color: rgb(201, 201, 201);
+      height: 300vh;
+      overflow: overlay;
+    }
+    body.loaded{
+      overflow: overlay;
+    }
+    body.nav-active{
+      overflow: hidden;
+    }
+
+    ::-webkit-scrollbar{
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track{
+      background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb{
+      background-color: #fcc201;
+    }
+
+    .content{
+      padding:45px;
+      /* display: flex;
+      min-height: calc(100vh - 74px);
+      overflow: hidden;
+    } */ }
+
     </style>
   </head>
 
   <body>
-    <div class="header">
+    <!-- <div class="header">
       <h1>Tugas Web</h1>
+      <br>
       <p style=" font-size:30px;"><b>Philia Mailangkay</b></p>
       <p>220211060336</p>
+    </div> -->
+ 
+    <div class="navbar">
+     <nav>
+      <ul>
+        <div class="intro"><a href="#"><b>Philia Mailangkay</b><br>220211060336</a></div>
+        <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blog.html">Blog</a></li> 
+      <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="tema"><a href="#">Tugas Pemrograman Web</a></div>
+     </ul>
+    </nav>
     </div>
-    <br>
-    <a>berikut konten tugas 1 [html]</a>
-    <br>
-    <br>
-    <ul>
-      <a href="index.html">Home</a> <br><br>
-      <a href="gallery.html">Gallery</a> <br><br>
-      <a href="blog.html">Blog</a> <br><br>
-      <a href="contact.html">Contact</a>
-    </ul>
+    
+    <section class="Home" id="index.html">
+      <div class="content">
+        <div class="text-box">
+        <h3>INTRO</h3>
+        <Br>
+        <P>website tugas pemrograman web</P>
+        </div>
+      </div>
+    </section>
+
+    <section class="Gallery" id="gallery.html">
+      <div class="content">
+        <div class="text-box">
+        <P>A tech antusiasth that have field in informatics and engineering major for over 2 years.<br>
+           I have interest on web design, making it easier for users to interact     
+        </P>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!--incase needed-->
+    <!--<script src="js/index.js"></script>-->
   </body>
 </html>
